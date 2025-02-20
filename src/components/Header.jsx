@@ -6,7 +6,7 @@ export const Header = ({ cart }) => {
       {/* <CartModal /> */}
       <header id="main-header">
         <div id="main-title">
-          <h1>SKLEP</h1>
+          <h1>ŁO-MOTO</h1>
         </div>
         <p>
           <button> Cart</button>

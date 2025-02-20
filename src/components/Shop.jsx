@@ -4,7 +4,7 @@ import { Product } from "./Product";
 export const Shop = () => {
   return (
     <section id="shop">
-      <h2>Elegancki sklep z motocyklami</h2>
+      <h2>Motocykle z drugiej ręki</h2>
 
       <ul id="products">
         {PRODUCTS_MOCK.map((product) => (

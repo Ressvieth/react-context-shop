@@ -2,7 +2,7 @@ export const Product = ({ image, title, price, description }) => {
   return (
     <article className="product">
       <img src={image} alt="foto motocykla" />
-      <div className="procut-content">
+      <div className="product-content">
         <div>
           <h3>{title}</h3>
           <p className="product-price">{price} ZŁ</p>
