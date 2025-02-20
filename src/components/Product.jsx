@@ -1,4 +1,13 @@
-export const Product = ({ image, title, price, description }) => {
+import PropTypes from "prop-types";
+
+export const Product = ({
+  id,
+  image,
+  title,
+  price,
+  description,
+  onAddToCart,
+}) => {
   return (
     <article className="product">
       <img src={image} alt="foto motocykla" />
@@ -9,9 +18,18 @@ export const Product = ({ image, title, price, description }) => {
           <p>{description}</p>
         </div>
         <p className="product-actions">
-          <button onClick={() => {}}>Dodaj do koszyka</button>
+          <button onClick={() => onAddToCart(id)}>Dodaj do koszyka</button>
         </p>
       </div>
     </article>
   );
+};
+
+Product.propTypes = {
+  id: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  description: PropTypes.string,
+  onAddToCart: PropTypes.func,
 };
