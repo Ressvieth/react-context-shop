@@ -3,10 +3,7 @@ import { createPortal } from "react-dom";
 import { Cart } from "./Cart";
 import PropTypes from "prop-types";
 
-export const CartModal = forwardRef(function Modal(
-  { actions, cartItems, title, onUpdateCartItemQuantity },
-  ref
-) {
+export const CartModal = forwardRef(function Modal({ actions, title }, ref) {
   const dialog = useRef();
 
   useImperativeHandle(ref, () => {
@@ -20,7 +17,7 @@ export const CartModal = forwardRef(function Modal(
   return createPortal(
     <dialog id="modal" ref={dialog}>
       <h2>{title}</h2>
-      <Cart items={cartItems} onUpdateItemQuantity={onUpdateCartItemQuantity} />
+      <Cart />
       <form method="dialog" id="modal-actions">
         {actions}
       </form>
@@ -31,7 +28,5 @@ export const CartModal = forwardRef(function Modal(
 
 CartModal.propTypes = {
   actions: PropTypes.node,
-  cartItems: PropTypes.array,
   title: PropTypes.string,
-  onUpdateCartItemQuantity: PropTypes.func,
 };
